@@ -1,5 +1,6 @@
 package com.max.agendasql.Listeners;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
@@ -10,7 +11,7 @@ public class ListenerRecycler implements View.OnClickListener
 {
     Principal context;
 
-    public ListenerRecycler()
+    public ListenerRecycler(Principal context)
     {
         this.context = context;
     }

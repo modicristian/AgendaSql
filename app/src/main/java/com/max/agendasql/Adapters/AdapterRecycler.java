@@ -24,7 +24,7 @@ public class AdapterRecycler extends RecyclerView.Adapter
     {
         this.context = context;
         this.agendaArrayList = agendaArrayList;
-        this.listenerRecycler = new ListenerRecycler();
+        this.listenerRecycler = listenerRecycler;
 
     }
 
