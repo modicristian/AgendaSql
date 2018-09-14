@@ -2,4 +2,5 @@
     <string name="app_name">AgendaSql</string>
     <string name="registrar">Registrar</string>
     <string name="ver_listado">Ver Listado</string>
+    <string name="recycler">Listado Recycler</string>
 </resources>

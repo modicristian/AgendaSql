@@ -66,7 +66,7 @@ public class AdapterAgenda extends BaseAdapter {
         altura = v.findViewById(R.id.tv7);
         pisoDto = v.findViewById(R.id.tv8);
 
-       listenerImageBorrar= new ListenerImageBorrar(context,listView,agendaArrayList);
+        listenerImageBorrar= new ListenerImageBorrar(context,listView,agendaArrayList);
         imageButton.setOnClickListener(listenerImageBorrar);
         listenerImagenEditar=new ListenerImagenEditar(context,listView,agendaArrayList);
         imagenBotonEditar.setOnClickListener(listenerImagenEditar);

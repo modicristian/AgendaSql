@@ -5,19 +5,31 @@
     style="@style/Layout_Listados"
     tools:context=".Interfaz.Principal">
 
-    <Button
-        style="@style/botones"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        android:id="@+id/botonRegistrar"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="171dp"
-        android:text="@string/registrar" />
-    <Button
-        style="@style/botones"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/botonVerListado"
-        android:text="@string/ver_listado"/>
+
+        <Button
+            android:id="@+id/botonRegistrar"
+            style="@style/botones"
+            android:text="@string/registrar"/>
+
+        <Button
+            android:id="@+id/botonVerListado"
+            style="@style/botones"
+            android:text="@string/ver_listado"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            style="@style/botones"
+            android:id="@+id/botonRecycler"
+            android:text="@string/recycler"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -16,7 +16,7 @@ public class ListenerRegistrar implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         Intent intentRegistrar= new Intent(context, Activity2.class);
-       intentRegistrar.putExtra("ID", 0);
+        intentRegistrar.putExtra("ID", 0);
         context.startActivity(intentRegistrar);
     }
 }
