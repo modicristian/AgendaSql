@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.max.agendasql.Interfaz.ListaVista;
 import com.max.agendasql.Interfaz.Principal;
+import com.max.agendasql.Interfaz.Recycler;
 
 public class ListenerRecycler implements View.OnClickListener
 {
@@ -19,7 +20,7 @@ public class ListenerRecycler implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
-        Intent intent =new Intent(context,ListaVista.class);//crear
+        Intent intent =new Intent(context,Recycler.class);//crear
         context.startActivity(intent);//iniciar
     }
 }
