@@ -6,11 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Interfaz.ListaVista">
-    <ListView
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordenar por Nombre"
+                android:id="@+id/checkboxNombre"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordenar por DNI"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/checkboxDNI"/>
+
+        </LinearLayout>
+
+        <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/ListaAgenda">
+        </ListView>
 
-    </ListView>
+</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

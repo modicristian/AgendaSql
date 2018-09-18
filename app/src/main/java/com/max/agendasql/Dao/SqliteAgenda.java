@@ -96,4 +96,32 @@ public class SqliteAgenda extends SQLiteOpenHelper{
       return agendaArrayList;
     }
 
+    public ArrayList<Agenda> getAgendaPorNombre(){
+        ArrayList<Agenda> agendaArrayList = new ArrayList<>();
+        this.Conectar();
+        String query="";
+        query="Select Nombre, Apellido, Telefono, Dni, Email, Calle, Altura, PisoDto, Id from AgendaTabla order by NOMBRE";
+        Cursor cursor= conexion.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            Agenda miAgenda = new Agenda(cursor.getInt(cursor.getColumnIndex("Id")),cursor.getString(cursor.getColumnIndex("Nombre")),cursor.getString(cursor.getColumnIndex("Apellido")),cursor.getInt(cursor.getColumnIndex("Telefono")),cursor.getInt(cursor.getColumnIndex("Dni")),cursor.getString(cursor.getColumnIndex("Email")),cursor.getString(cursor.getColumnIndex("Calle")),cursor.getInt(cursor.getColumnIndex("Altura")),cursor.getInt(cursor.getColumnIndex("PisoDto")));
+            agendaArrayList.add(miAgenda);
+        }
+        this.Desconectar();
+        return agendaArrayList;
+    }
+
+    public ArrayList<Agenda> getAgendaPorDNI(){
+        ArrayList<Agenda> agendaArrayList = new ArrayList<>();
+        this.Conectar();
+        String query="";
+        query="Select Nombre, Apellido, Telefono, Dni, Email, Calle, Altura, PisoDto, Id from AgendaTabla order by Dni";
+        Cursor cursor= conexion.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            Agenda miAgenda = new Agenda(cursor.getInt(cursor.getColumnIndex("Id")),cursor.getString(cursor.getColumnIndex("Nombre")),cursor.getString(cursor.getColumnIndex("Apellido")),cursor.getInt(cursor.getColumnIndex("Telefono")),cursor.getInt(cursor.getColumnIndex("Dni")),cursor.getString(cursor.getColumnIndex("Email")),cursor.getString(cursor.getColumnIndex("Calle")),cursor.getInt(cursor.getColumnIndex("Altura")),cursor.getInt(cursor.getColumnIndex("PisoDto")));
+            agendaArrayList.add(miAgenda);
+        }
+        this.Desconectar();
+        return agendaArrayList;
+    }
+
 }
