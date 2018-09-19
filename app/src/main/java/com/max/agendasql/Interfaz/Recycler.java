@@ -37,7 +37,7 @@ public class Recycler extends AppCompatActivity
 
         sqliteAgenda = new SqliteAgenda(this);
         agendaArrayList = sqliteAgenda.getAgenda();
-        adapterRecycler = new AdapterRecycler(this,agendaArrayList);
+        adapterRecycler = new AdapterRecycler(this,agendaArrayList,recyclerViewAgenda);
         recyclerViewAgenda.setAdapter(adapterRecycler);
         recyclerViewAgenda.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerViewAgenda.setHasFixedSize(true);

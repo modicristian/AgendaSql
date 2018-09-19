@@ -20,7 +20,7 @@ public class AdapterRecycler extends RecyclerView.Adapter
     private ArrayList<Agenda> agendaArrayList;
     private ListenerRecycler listenerRecycler;
 
-    public AdapterRecycler(Context context,ArrayList<Agenda> agendaArrayList)
+    public AdapterRecycler(Context context,ArrayList<Agenda> agendaArrayList,RecyclerView recyclerView)
     {
         this.context = context;
         this.agendaArrayList = agendaArrayList;
@@ -34,8 +34,6 @@ public class AdapterRecycler extends RecyclerView.Adapter
     {
         LayoutInflater inflater = LayoutInflater.from(context);
         View viewDelacelda = inflater.inflate(R.layout.celdas,parent,false);
-        viewDelacelda.setOnClickListener(listenerRecycler);
-
         AgendaViewHolder agendaViewHolder = new AgendaViewHolder(viewDelacelda);
 
         return agendaViewHolder;
@@ -77,11 +75,11 @@ public class AdapterRecycler extends RecyclerView.Adapter
         {
             nombre.setText(unaAgenda.getNombre());
             apellido.setText(unaAgenda.getApellido());
-            telefono.setText(unaAgenda.getTelefono());
-            dni.setText(unaAgenda.getDni());
+            telefono.setText(unaAgenda.getTelefono().toString());
+            dni.setText(unaAgenda.getDni().toString());
             calle.setText(unaAgenda.getCalle());
-            altura.setText(unaAgenda.getAltura());
-            pisoDto.setText(unaAgenda.getPisoDto());
+            altura.setText(unaAgenda.getAltura().toString());
+            pisoDto.setText(unaAgenda.getPisoDto().toString());
             email.setText(unaAgenda.getEmail());
         }
     }
