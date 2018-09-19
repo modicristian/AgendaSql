@@ -6,6 +6,7 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import com.max.agendasql.Adapters.AdapterAgenda;
 import com.max.agendasql.Dao.SqliteAgenda;
+import com.max.agendasql.Listeners.ListenerCheckBoxDni;
 import com.max.agendasql.Listeners.ListenerCheckBoxNombre;
 import com.max.agendasql.Models.Agenda;
 import com.max.agendasql.R;
@@ -17,6 +18,7 @@ public class ListaVista extends AppCompatActivity {
     private AdapterAgenda adapterAgenda;
     private ListView listViewAgenda;
     private ListenerCheckBoxNombre listenerCheckBoxNombre;
+    private ListenerCheckBoxDni listenerCheckBoxDni;
     private CheckBox checkBoxNombre, checkBoxDni;
 
     public AdapterAgenda getAdapterAgenda() {
@@ -29,6 +31,7 @@ public class ListaVista extends AppCompatActivity {
         setContentView(R.layout.list_view);
 
         checkBoxNombre = findViewById(R.id.checkboxNombre);
+        checkBoxDni = findViewById(R.id.checkboxDNI);
 
         listViewAgenda=findViewById(R.id.ListaAgenda);
 
@@ -38,8 +41,10 @@ public class ListaVista extends AppCompatActivity {
 
         listViewAgenda.setAdapter(adapterAgenda);
 
-        ListenerCheckBoxNombre listenerCheckBoxNombre = new ListenerCheckBoxNombre(this,listViewAgenda,agendaArrayList);
+        listenerCheckBoxNombre = new ListenerCheckBoxNombre(this,listViewAgenda,agendaArrayList);
         checkBoxNombre.setOnClickListener(listenerCheckBoxNombre);
+        listenerCheckBoxDni = new ListenerCheckBoxDni(this,listViewAgenda,agendaArrayList);
+        checkBoxDni.setOnClickListener(listenerCheckBoxDni);
 
 
     }

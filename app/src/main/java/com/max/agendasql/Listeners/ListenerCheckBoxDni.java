@@ -5,19 +5,18 @@ import android.widget.ListView;
 
 import com.max.agendasql.Dao.SqliteAgenda;
 import com.max.agendasql.Interfaz.ListaVista;
-import com.max.agendasql.Interfaz.Principal;
 import com.max.agendasql.Models.Agenda;
 
 import java.util.ArrayList;
 
-public class ListenerCheckBoxNombre implements View.OnClickListener
+public class ListenerCheckBoxDni implements View.OnClickListener
 {
     private SqliteAgenda sqliteAgenda;
     private ListaVista context;
     private ListView listView;
     private ArrayList<Agenda> agendaArrayList;
 
-    public ListenerCheckBoxNombre(ListaVista context, ListView listView, ArrayList<Agenda> agendaArrayList)
+    public ListenerCheckBoxDni(ListaVista context, ListView listView, ArrayList<Agenda> agendaArrayList)
     {
         this.context = context;
         this.listView = listView;
@@ -30,10 +29,9 @@ public class ListenerCheckBoxNombre implements View.OnClickListener
         sqliteAgenda= new SqliteAgenda(context);
         agendaArrayList = new ArrayList<Agenda>();
 
-        agendaArrayList = sqliteAgenda.getAgendaPorNombre();
+        agendaArrayList = sqliteAgenda.getAgendaPorDNI();
 
         context.getAdapterAgenda().setAgendaArrayList(agendaArrayList);
         context.getAdapterAgenda().notifyDataSetChanged();
-
     }
 }
